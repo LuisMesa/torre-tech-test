@@ -19,7 +19,10 @@ class App extends Component {
     window.IN.API
       .Profile('me')
       .fields("id", "first-name", "last-name", "email-address", "public-profile-url", "picture-url", "picture-urls::(original)", "headline", "summary", "location", "industry", "positions")
-      .result((result)=>{console.log(result); this.setState({LinkedinProfile: result})});
+      .result((result) => {
+        console.log(result);
+        this.setState({LinkedinProfile: result})
+      });
     this.exportDataFromLinkedinToBio();
   };
 
@@ -30,8 +33,16 @@ class App extends Component {
   };
 
   exportDataFromLinkedinToBio = () => {
-    if(this.state.authLinkedin && this.state.authBio){
-
+    if (this.state.authLinkedin && this.state.authBio) {
+      fetch('https://bio.torre.co/api/bios/lamesa/education', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: '{"name":"Program Name","organizations":[188],"media":{"description":"","address":"","metadata":{}},"fromMonth":"","fromYear":"","from":{"month":"","year":""},"toMonth":"","toYear":"","to":{"option":"","month":"","year":""},"location":"","additionalInfo":"","people":[],"achievements":[],"strengths":[],"jobs":[],"projects":[],"publications":[],"education":[],"interests":[],"relatedExperiences":[]}'
+      })
     }
   };
 
