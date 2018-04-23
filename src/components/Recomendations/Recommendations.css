@@ -1,0 +1,31 @@
+.Recommendations {
+  width: 100%;
+  min-height: 100px;
+  padding: 35px 3vw; }
+  .Recommendations .metrics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%; }
+    .Recommendations .metrics .metric {
+      width: 33%; }
+      .Recommendations .metrics .metric .value {
+        font-size: 1.8em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+  .Recommendations .action {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+    .Recommendations .action .suggest {
+      margin-top: 10px;
+      color: rgba(0, 0, 0, 0.54); }
+
+/*# sourceMappingURL=Recommendations.css.map */
