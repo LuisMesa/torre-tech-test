@@ -11,11 +11,12 @@ class Cover extends Component {
   //   window.IN.User.authorize( this.props.authenticateLinkedin, window);
   // };
   render() {
+    const {src} = this.props;
     return (
       <Paper className="Cover">
         {/*<img className="background" src="https://starrgate.s3.amazonaws.com:443/users/4037ecee8f3abf7429bde31ddcccbb67c88eae9c/profile_eKe1KUs.jpg"/>*/}
-        {this.props.authBio && this.props.authLinkedin?
-          <img src="https://starrgate.s3.amazonaws.com:443/users/4037ecee8f3abf7429bde31ddcccbb67c88eae9c/profile_eKe1KUs.jpg" alt="User profile"/>
+        { this.props.authLinkedin?
+          <img src={ src ? src : "https://starrgate.s3.amazonaws.com:443/users/4037ecee8f3abf7429bde31ddcccbb67c88eae9c/profile_eKe1KUs.jpg"} alt="User profile"/>
           :
           <div className="get-started">
             <div className="title">Import all your data from Linkedin to Torre Bio now!</div>

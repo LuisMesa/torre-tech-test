@@ -10,12 +10,13 @@ import './About.css';
 
 class About extends Component{
   render(){
+    const {name, career, location, description} = this.props;
     return(
       <Paper className="Paper About">
-        <div className="text About__name">Hello, my name is Luis Andres Mesa Fajardo</div>
-        <div className="text About__title">Systems and Computing Engineer</div>
-        <div className="text About__location">Bogota D.C., Colombia</div>
-        <div className="text About__description">Student of Systems and Computing Engineering in Universidad de los Andes. Mainly interested in web development related topics, including Back-end, Front-end, DevOps and databases.</div>
+        <div className="text About__name">Hello, my name is {name? name :'Luis Andres Mesa Fajardo'}</div>
+        <div className="text About__title">{ career ? career : 'Systems and Computing Engineer'}</div>
+        <div className="text About__location">{ location ? location :'Bogota D.C., Colombia'}</div>
+        <div className="text About__description">{ description ? description : 'Student of Systems and Computing Engineering in Universidad de los Andes. Mainly interested in web development related topics, including Back-end, Front-end, DevOps and databases.'}</div>
         <Divider/>
         <div className="About__contact">
           <EmailOutline/>

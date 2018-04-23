@@ -65,16 +65,22 @@ class App extends Component {
                authenticateBio={this.authenticateBio}
         />
         <div className="section">
-          <About/>
+          <About
+            name={this.state.LinkedinProfile ? this.state.LinkedinProfile.values[0].firstName + ' ' + this.state.LinkedinProfile.values[0].lastName : null}
+            career = {this.state.LinkedinProfile ? this.state.LinkedinProfile.values[0].industry : null}
+            location= {this.state.LinkedinProfile && this.state.LinkedinProfile.values[0].location? this.state.LinkedinProfile.values[0].location.name : null}
+            description= {this.state.LinkedinProfile ? this.state.LinkedinProfile.values[0].summary : null}
+          />
           <Recommendations/>
         </div>
         <div className="section">
           <div className="text section__title">
             Education
           </div>
-          <Education/>
+          <Education
+            career = {this.state.LinkedinProfile ? this.state.LinkedinProfile.values[0].industry : null}
+          />
         </div>
-
       </div>
     );
   }

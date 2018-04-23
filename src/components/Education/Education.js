@@ -7,10 +7,11 @@ import './Education.css';
 
 class Education extends Component{
   render(){
+    const {career, university} = this.props;
     return(
       <Paper className="Education">
-        <div className="Education__title">Systems and Computing Engineering</div>
-        <div className="Education__place">Universidad de los Andes</div>
+        <div className="Education__title">{ career ? career : 'Systems and Computing Engineering'}</div>
+        <div className="Education__place">{ university ? university:'Universidad de los Andes'}</div>
         <div className="Education__actions">
           <Delete style={{height:'24px', margin:'10px 10px'}}/>
           <ShareVariant style={{height:'24px', margin:'10px 10px'}}/>
